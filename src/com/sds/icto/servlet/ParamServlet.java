@@ -46,6 +46,8 @@ public class ParamServlet extends HttpServlet {
 		String pwd = request.getParameter("pwd");
 		String gdr = request.getParameter("성별");
 		String[] hbby = request.getParameterValues("관심사");
+		String content = request.getParameter("content");
+		String job = request.getParameter("job");
 
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
@@ -62,6 +64,12 @@ public class ParamServlet extends HttpServlet {
 			out.println(",");
 		}
 		out.print(hbby[hbby.length-1]);
+		
+		out.println("</b><br> 가입 인사 : ");
+		out.println(content);
+		
+		out.println("</b><br> 당신의 현재 직업은 : "+job);
+		
 	}
 
 }
